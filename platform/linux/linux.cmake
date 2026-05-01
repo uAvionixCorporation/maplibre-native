@@ -230,7 +230,7 @@ endif()
 
 add_subdirectory(${PROJECT_SOURCE_DIR}/bin)
 add_subdirectory(${PROJECT_SOURCE_DIR}/expression-test)
-add_subdirectory(${PROJECT_SOURCE_DIR}/platform/sdl)
+add_subdirectory(${PROJECT_SOURCE_DIR}/platform/headless)
 if(MLN_WITH_GLFW)
 	add_subdirectory(${PROJECT_SOURCE_DIR}/platform/glfw)
 endif()
