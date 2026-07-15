@@ -489,7 +489,14 @@ public:
     friend Buffer;
 };
 
-class UniformBufferAllocator::Impl : public gl::BufferAllocator<gl::UniformBufferGL, GL_UNIFORM_BUFFER> {};
+class UniformBufferAllocator::Impl : public gl::BufferAllocator<
+    gl::UniformBufferGL,
+    GL_UNIFORM_BUFFER,
+    64,      // PageSizeKB — default is 8
+    10,     // MaxFragmentationOccupancy — unchanged
+    4096,   // MaxFreeBuffers
+    256     // InitialBufferSize — unchanged
+> {};
 
 UniformBufferAllocator::~UniformBufferAllocator() = default;
 
